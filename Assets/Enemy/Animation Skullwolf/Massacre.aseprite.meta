@@ -1,0 +1,948 @@
+fileFormatVersion: 2
+guid: 790ac2bb24339c4439ed5fd1869716f5
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Massacre_Frame_0
+    originalName: 
+    pivot: {x: 0.49180326, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 47
+      width: 61
+      height: 28
+    spriteID: fc49340fdce73d9468a0f83d6c06f882
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 47}
+  - name: Massacre_Frame_1
+    originalName: 
+    pivot: {x: 0.49180326, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 83
+      width: 61
+      height: 25
+    spriteID: a1cb6895ccfabf14fac2b1ec8b88db04
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 83}
+  - name: Massacre_Frame_2
+    originalName: 
+    pivot: {x: 0.49180326, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 116
+      width: 61
+      height: 25
+    spriteID: 4e468500d5033e342b390d37b3c50188
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 116}
+  - name: Massacre_Frame_3
+    originalName: 
+    pivot: {x: 0.49180326, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 347
+      width: 61
+      height: 24
+    spriteID: 962239a1cff37bc4e94f2a7bcb0e6434
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 347}
+  - name: Massacre_Frame_4
+    originalName: 
+    pivot: {x: 0.49180326, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 379
+      width: 61
+      height: 24
+    spriteID: 53e893a4c1b2e5744bb8d3debb25bb02
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 379}
+  - name: Massacre_Frame_5
+    originalName: 
+    pivot: {x: 0.49180326, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 411
+      width: 61
+      height: 24
+    spriteID: 78adeb2ddca6a834cb2c9f926aba0954
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 411}
+  - name: Massacre_Frame_6
+    originalName: 
+    pivot: {x: 0.49180326, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 443
+      width: 61
+      height: 24
+    spriteID: 3009fc16f3d209a40b472516dc689f4b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 443}
+  - name: Massacre_Frame_7
+    originalName: 
+    pivot: {x: 0.45614034, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 305
+      width: 57
+      height: 23
+    spriteID: 2f41c40a594b03841a292f6a374ac6bc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 20, y: 305}
+  - name: Massacre_Frame_8
+    originalName: 
+    pivot: {x: 0.46551725, y: -0.06451613}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 197
+      width: 58
+      height: 31
+    spriteID: 3cb8a35f10107b14794835e5db7f1fd4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 21, y: 197}
+  - name: Massacre_Frame_9
+    originalName: 
+    pivot: {x: 0.48387095, y: -0.17142858}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 4
+      width: 62
+      height: 35
+    spriteID: 550ddaf9cfc30b84b8654760804ccba8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 4}
+  - name: Massacre_Frame_10
+    originalName: 
+    pivot: {x: 0.5090909, y: -0.1923077}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 475
+      width: 55
+      height: 26
+    spriteID: b212e5a74869ed24481756806d06c40c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 90, y: 475}
+  - name: Massacre_Frame_11
+    originalName: 
+    pivot: {x: 0.47272727, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 197
+      y: 475
+      width: 55
+      height: 23
+    spriteID: 121652551069b484b9b629249bb0982d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 151, y: 475}
+  - name: Massacre_Frame_12
+    originalName: 
+    pivot: {x: 0.52, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 336
+      width: 50
+      height: 22
+    spriteID: 1f0f7d14041d50a4e99055729b3c944b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 20, y: 336}
+  - name: Massacre_Frame_13
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 347
+      width: 48
+      height: 21
+    spriteID: 69725e14267a3364caca1f06cb1ee9b4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 155, y: 347}
+  - name: Massacre_Frame_14
+    originalName: 
+    pivot: {x: 0.52, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 366
+      width: 50
+      height: 22
+    spriteID: c5f1cd3aa86109248a306df51d8ee220
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 20, y: 366}
+  - name: Massacre_Frame_15
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 236
+      width: 60
+      height: 27
+    spriteID: 743307da5cf2e744e8c1616ad098948e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 24, y: 236}
+  - name: Massacre_Frame_16
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 271
+      width: 60
+      height: 26
+    spriteID: cc159757670f4094baa4fc974153a446
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 24, y: 271}
+  - name: Massacre_Frame_17
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 156
+      width: 60
+      height: 33
+    spriteID: 5b9265d7f3866f5478376008bc2abaa7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 24, y: 156}
+  - name: Massacre_Frame_18
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 110
+      width: 60
+      height: 38
+    spriteID: ea5be4d6f0227bb46bbc686e05b0f6b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 24, y: 110}
+  - name: Massacre_Frame_19
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 4
+      width: 60
+      height: 44
+    spriteID: 574e3e649ff328749adc06740a566663
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 24, y: 4}
+  - name: Massacre_Frame_20
+    originalName: 
+    pivot: {x: 0.5357143, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 56
+      width: 56
+      height: 46
+    spriteID: 4d19650518d394b43b0b253b80b3b67a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 24, y: 56}
+  - name: Massacre_Frame_21
+    originalName: 
+    pivot: {x: 0.5555556, y: 0.039215688}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 54
+      height: 51
+    spriteID: e5215616299b5054baa9098290ced58f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -38, y: 4}
+  - name: Massacre_Frame_22
+    originalName: 
+    pivot: {x: 0.625, y: 0.11764706}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 379
+      width: 48
+      height: 17
+    spriteID: cc980321ac3bd5349a1de565ee11957b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 379}
+  - name: Massacre_Frame_23
+    originalName: 
+    pivot: {x: 0.49180326, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 149
+      width: 61
+      height: 25
+    spriteID: aeeaad62176f38c4686e96d41534db5b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 149}
+  - name: Massacre_Frame_24
+    originalName: 
+    pivot: {x: 0.49180326, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 182
+      width: 61
+      height: 25
+    spriteID: e1136e0c47bd0784e9c4e045e4671e13
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 182}
+  - name: Massacre_Frame_25
+    originalName: 
+    pivot: {x: 0.49180326, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 215
+      width: 61
+      height: 25
+    spriteID: 7b88f1cdfb73ffa42901b58c5aa6c244
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 215}
+  - name: Massacre_Frame_26
+    originalName: 
+    pivot: {x: 0.49180326, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 248
+      width: 61
+      height: 25
+    spriteID: a9cf72df29d67cf4a967008734399162
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 248}
+  - name: Massacre_Frame_27
+    originalName: 
+    pivot: {x: 0.49180326, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 281
+      width: 61
+      height: 25
+    spriteID: 5b96aeda683218d44982aba632ccbd28
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 281}
+  - name: Massacre_Frame_28
+    originalName: 
+    pivot: {x: 0.49180326, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 134
+      y: 314
+      width: 61
+      height: 25
+    spriteID: e4e9cca7763255146a9dd2abd4777231
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 314}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -924805703
+    name: Massacre
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Massacre_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: -40
+        y: 0
+        width: 103
+        height: 56
+      spriteId: fc49340fdce73d9468a0f83d6c06f882
+    - name: Massacre_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: -40
+        y: 0
+        width: 103
+        height: 56
+      spriteId: a1cb6895ccfabf14fac2b1ec8b88db04
+    - name: Massacre_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: -40
+        y: 0
+        width: 103
+        height: 56
+      spriteId: 4e468500d5033e342b390d37b3c50188
+    - name: Massacre_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: -40
+        y: 0
+        width: 103
+        height: 56
+      spriteId: 962239a1cff37bc4e94f2a7bcb0e6434
+    - name: Massacre_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: -40
+        y: 0
+        width: 103
+        height: 56
+      spriteId: 53e893a4c1b2e5744bb8d3debb25bb02
+    - name: Massacre_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: -40
+        y: 0
+        width: 103
+        height: 56
+      spriteId: 78adeb2ddca6a834cb2c9f926aba0954
+    - name: Massacre_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: -40
+        y: 0
+        width: 103
+        height: 56
+      spriteId: 3009fc16f3d209a40b472516dc689f4b
+    - name: Massacre_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: -40
+        y: 0
+        width: 103
+        height: 56
+      spriteId: 2f41c40a594b03841a292f6a374ac6bc
+    - name: Massacre_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: -40
+        y: 2
+        width: 103
+        height: 54
+      spriteId: 3cb8a35f10107b14794835e5db7f1fd4
+    - name: Massacre_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: -40
+        y: 6
+        width: 104
+        height: 50
+      spriteId: 550ddaf9cfc30b84b8654760804ccba8
+    - name: Massacre_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: -40
+        y: 5
+        width: 99
+        height: 51
+      spriteId: b212e5a74869ed24481756806d06c40c
+    - name: Massacre_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: -40
+        y: 0
+        width: 101
+        height: 56
+      spriteId: 121652551069b484b9b629249bb0982d
+    - name: Massacre_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: -40
+        y: 0
+        width: 96
+        height: 56
+      spriteId: 1f0f7d14041d50a4e99055729b3c944b
+    - name: Massacre_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: -40
+        y: 0
+        width: 96
+        height: 56
+      spriteId: 69725e14267a3364caca1f06cb1ee9b4
+    - name: Massacre_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: -40
+        y: 0
+        width: 96
+        height: 56
+      spriteId: c5f1cd3aa86109248a306df51d8ee220
+    - name: Massacre_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: -40
+        y: 0
+        width: 102
+        height: 56
+      spriteId: 743307da5cf2e744e8c1616ad098948e
+    - name: Massacre_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: -40
+        y: 0
+        width: 102
+        height: 56
+      spriteId: cc159757670f4094baa4fc974153a446
+    - name: Massacre_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: -40
+        y: 0
+        width: 102
+        height: 56
+      spriteId: 5b9265d7f3866f5478376008bc2abaa7
+    - name: Massacre_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: -40
+        y: 0
+        width: 102
+        height: 56
+      spriteId: ea5be4d6f0227bb46bbc686e05b0f6b3
+    - name: Massacre_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: -40
+        y: 0
+        width: 102
+        height: 56
+      spriteId: 574e3e649ff328749adc06740a566663
+    - name: Massacre_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: -40
+        y: 0
+        width: 98
+        height: 56
+      spriteId: 4d19650518d394b43b0b253b80b3b67a
+    - name: Massacre_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: -40
+        y: -2
+        width: 96
+        height: 58
+      spriteId: e5215616299b5054baa9098290ced58f
+    - name: Massacre_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: -40
+        y: -2
+        width: 90
+        height: 58
+      spriteId: cc980321ac3bd5349a1de565ee11957b
+    - name: Massacre_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: -40
+        y: 0
+        width: 103
+        height: 56
+      spriteId: aeeaad62176f38c4686e96d41534db5b
+    - name: Massacre_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: -40
+        y: 0
+        width: 103
+        height: 56
+      spriteId: e1136e0c47bd0784e9c4e045e4671e13
+    - name: Massacre_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: -40
+        y: 0
+        width: 103
+        height: 56
+      spriteId: 7b88f1cdfb73ffa42901b58c5aa6c244
+    - name: Massacre_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: -40
+        y: 0
+        width: 103
+        height: 56
+      spriteId: a9cf72df29d67cf4a967008734399162
+    - name: Massacre_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: -40
+        y: 0
+        width: 103
+        height: 56
+      spriteId: 5b96aeda683218d44982aba632ccbd28
+    - name: Massacre_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: -40
+        y: 0
+        width: 103
+        height: 56
+      spriteId: e4e9cca7763255146a9dd2abd4777231
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}
