@@ -410,9 +410,8 @@ GameObject:
   - component: {fileID: 414639934247066386}
   - component: {fileID: 5012727095551993478}
   - component: {fileID: 1391799301488002852}
-  - component: {fileID: 8125264254562720322}
-  - component: {fileID: 3023551059144036566}
   - component: {fileID: 7225624906963601992}
+  - component: {fileID: 63897390681891037}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Enemy
@@ -429,7 +428,7 @@ Transform:
   m_GameObject: {fileID: 8723274588402651135}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -12.46, y: -1.634, z: -3.65}
+  m_LocalPosition: {x: -14.12, y: -2.7301092, z: -3.65}
   m_LocalScale: {x: 2.8083, y: 3.3083, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -476,10 +475,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1737851956, guid: 314225098d7d07546bad61916fe7006e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.61, y: 0.25}
@@ -515,72 +514,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8125264254562720322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8723274588402651135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9309a1c7c368b5843bd9a787240d9c85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 48214ba8f82770f45b3078b5fe1295a6, type: 2}
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  healthSlider: {fileID: 4750499651665229599}
-  sliderDisplayDuration: 0.1
---- !u!61 &3023551059144036566
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8723274588402651135}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.61, y: 0.25}
-    newSize: {x: 0.61, y: 0.25}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.61, y: 0.25}
-  m_EdgeRadius: 0
 --- !u!95 &7225624906963601992
 Animator:
   serializedVersion: 5
@@ -602,6 +535,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &63897390681891037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8723274588402651135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12b1d6b434acf846bda0c6882285c8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 48214ba8f82770f45b3078b5fe1295a6, type: 2}
+  healthSlider: {fileID: 4750499651665229599}
+  sliderDisplayDuration: 0.5
+  health: 0
+  maxHealth: 0
+  moveSpeed: 0
+  damageToPlayer: 10
+  fadeDuration: 5
 --- !u!1 &9044627687994082692
 GameObject:
   m_ObjectHideFlags: 0

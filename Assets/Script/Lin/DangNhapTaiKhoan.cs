@@ -1,19 +1,20 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
+
 public class DangNhapTaiKhoan : MonoBehaviour
 {
     public TMP_InputField username;
     public TMP_InputField password;
     public TextMeshProUGUI thongbao;
 
-
     public void DangNhapButton()
     {
         StartCoroutine(DangNhap());
     }
+
     IEnumerator DangNhap()
     {
         WWWForm form = new WWWForm();
@@ -34,21 +35,27 @@ public class DangNhapTaiKhoan : MonoBehaviour
             if (get == "empty")
             {
                 thongbao.text = "Vui lòng nhập thông tin đăng nhập";
-            }else if (get == "" || get == null)
+            }
+            else if (get == "" || get == null)
             {
                 thongbao.text = "Tài khoản hoặc mật khẩu không chính xác";
-            }else if (get.Contains("Lỗi"))
+            }
+            else if (get.Contains("Lỗi"))
             {
-                thongbao.text = "Không kết nối được sever";
+                thongbao.text = "Không kết nối được server";
             }
             else
             {
                 thongbao.text = "Đăng nhập thành công";
                 PlayerPrefs.SetString("token", get);
                 Debug.Log(get);
+                yield return new WaitForSeconds(3);
+                SceneManager.LoadScene("Chapter");
+                yield break;
             }
 
-            string tk = PlayerPrefs.GetString("token");
+            yield return new WaitForSeconds(3);
+            thongbao.text = "";
         }
     }
 }

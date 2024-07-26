@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -14,11 +13,12 @@ public class DangKyTaiKhoan : MonoBehaviour
     {
         StartCoroutine(DangKy());
     }
+
     IEnumerator DangKy()
     {
         WWWForm form = new WWWForm();
-        form.AddField("user",username.text);
-        form.AddField("passwd",password.text);
+        form.AddField("user", username.text);
+        form.AddField("passwd", password.text);
 
         UnityWebRequest www = UnityWebRequest.Post("https://fpl.expvn.com/dangky.php", form);
         yield return www.SendWebRequest();
@@ -33,11 +33,22 @@ public class DangKyTaiKhoan : MonoBehaviour
 
             switch (get)
             {
-                case "exist": thongbao.text = "Tài khoản đã tồn tài";break;
-                case "OK": thongbao.text = "Đăng kí thành công"; break;
-                case "ERROR": thongbao.text = "Đăng kí không thành công"; break;
-                default: thongbao.text = "Sever đang bận";break;
+                case "exist":
+                    thongbao.text = "Tài khoản đã tồn tại";
+                    break;
+                case "OK":
+                    thongbao.text = "Đăng ký thành công";
+                    break;
+                case "ERROR":
+                    thongbao.text = "Đăng ký không thành công";
+                    break;
+                default:
+                    thongbao.text = "Server đang bận";
+                    break;
             }
         }
+
+        yield return new WaitForSeconds(3);
+        thongbao.text = "";
     }
 }
