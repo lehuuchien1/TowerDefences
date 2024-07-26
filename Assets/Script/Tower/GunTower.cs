@@ -1,40 +1,53 @@
 ﻿using UnityEngine;
 
-public class GunTower : MonoBehaviour
+public class GunTower : Tower
 {
-    public TowerData stats; // Tham chiếu đến Scriptable Object chứa chỉ số
-    public GameObject bulletPrefab; // Đạn bắn ra
-    public Transform firePoint; // Điểm xuất phát của đạn
+    public GameObject projectilePrefab;
+    public Transform firePoint;
 
-    private float fireCountdown = 0f;
     private Transform target;
-    private bool canShoot = true; // Cờ kiểm tra liệu có thể bắn hay không
-    private SpriteRenderer spriteRenderer; // Component để lật sprite
+    private bool canShoot = true;
+    private float gunTowerAttackCooldown = 0f; // Đổi tên biến
 
-    void Start()
+    protected override void Update()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+        base.Update();
 
-    void Update()
-    {
-        if (target == null || Vector2.Distance(transform.position, target.position) > stats.attackRadius || TargetIsDead())
+        if (projectilePrefab == null || firePoint == null)
+        {
+            return;
+        }
+
+        if (target == null || Vector2.Distance(transform.position, target.position) > towerData.levels[level].attackRadius || TargetIsDead())
         {
             FindNearestEnemy();
         }
 
         if (target != null)
         {
-            FlipTowardsTarget(); // Lật trục X theo hướng của mục tiêu
+            FlipTowardsTarget();
 
-            if (fireCountdown <= 0f && canShoot)
+            if (gunTowerAttackCooldown <= 0f && canShoot)
             {
                 Shoot();
-                fireCountdown = 1f / stats.speed; // Cập nhật lại dựa trên tốc độ bắn
+                gunTowerAttackCooldown = 1f / towerData.levels[level].fireRate;
             }
         }
 
-        fireCountdown -= Time.deltaTime;
+        gunTowerAttackCooldown -= Time.deltaTime;
+    }
+
+    private bool TargetIsDead()
+    {
+        if (target != null)
+        {
+            Enemy enemyComponent = target.GetComponent<Enemy>();
+            if (enemyComponent != null)
+            {
+                return enemyComponent.health <= 0;
+            }
+        }
+        return false;
     }
 
     void FindNearestEnemy()
@@ -46,10 +59,10 @@ public class GunTower : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy < shortestDistance && distanceToEnemy <= stats.attackRadius)
+            if (distanceToEnemy < shortestDistance && distanceToEnemy <= towerData.levels[level].attackRadius)
             {
                 Enemy enemyComponent = enemy.GetComponent<Enemy>();
-                if (enemyComponent != null && enemyComponent.Health > 0 && !enemyComponent.IsInvisible)
+                if (enemyComponent != null && enemyComponent.health > 0 && !(enemyComponent is Wolf wolf && wolf.IsFading()))
                 {
                     shortestDistance = distanceToEnemy;
                     nearestEnemy = enemy;
@@ -60,36 +73,28 @@ public class GunTower : MonoBehaviour
         target = nearestEnemy != null ? nearestEnemy.transform : null;
     }
 
-    bool TargetIsDead()
-    {
-        if (target != null)
-        {
-            Enemy enemyComponent = target.GetComponent<Enemy>();
-            if (enemyComponent != null && enemyComponent.Health <= 0)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
 
     void Shoot()
     {
-        GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        GunBullet bullet = bulletGO.GetComponent<GunBullet>();
-
-        if (bullet != null)
+        if (projectilePrefab == null || firePoint == null)
         {
-            bullet.Initialize(target, stats.speed, this); // Truyền tham chiếu đến GunTower
+            return;
         }
 
-        canShoot = false; // Không thể bắn tiếp cho đến khi đạn hiện tại bị hủy
+        GameObject projectileGO = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        Projectile projectile = projectileGO.GetComponent<Projectile>();
+
+        if (projectile != null)
+        {
+            projectile.Initialize(target, towerData.levels[level].projectileData, this);
+        }
+
+        canShoot = false;
     }
 
-
-    public void OnBulletDestroyed()
+    public override void OnProjectileDestroyed()
     {
-        canShoot = true; // Cho phép bắn tiếp khi đạn hiện tại đã bị hủy
+        canShoot = true;
     }
 
     void FlipTowardsTarget()
@@ -104,9 +109,13 @@ public class GunTower : MonoBehaviour
         }
     }
 
-    void OnDrawGizmosSelected()
+    protected override void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, stats.attackRadius);
+        base.OnDrawGizmosSelected();
+    }
+
+    protected override void Attack(Enemy enemy)
+    {
+        // GunTower sẽ không tấn công trực tiếp, mà sẽ bắn đạn
     }
 }

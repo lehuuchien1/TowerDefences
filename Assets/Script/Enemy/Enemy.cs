@@ -5,30 +5,47 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     public EnemyData enemyData;
-    public Transform[] waypoints;
-
-    private int currentWaypointIndex = 0;
-    private float health;
-    private float maxHealth;
-    private float moveSpeed;
-    private bool isInvisible = false; // Biến để kiểm soát trạng thái tàng hình
-
     public Slider healthSlider;
-    public float sliderDisplayDuration = 0.5f;
-    private float hitTimer = 0f;
-    private Animator animator;
-    private bool isDead = false;
-    public float invisibilityDuration = 2f; // tgian tanhinh
-    public float Health { get { return health; } }
-    public bool IsInvisible { get { return isInvisible; } } // Getter cho biến isInvisible
+    public float sliderDisplayDuration = 0.3f;
 
-    void Start()
+    public float health;
+    public float maxHealth;
+    public float moveSpeed;
+    protected Animator animator;
+    protected bool isDead = false;
+    protected Transform[] waypoints;
+    protected int currentWaypointIndex = 0;
+    protected float hitTimer = 0f;
+    private float originalMoveSpeed; // Lưu tốc độ gốc
+    private float slowEffectMultiplier = 1f; // Tỉ lệ làm chậm hiện tại
+
+    // Thêm biến flipX
+    private bool flipX = false;
+
+    // Sát thương khi kẻ thù đến điểm waypoint cuối cùng
+    public float damageToPlayer = 10f;
+
+    public Transform[] Waypoints
     {
-        maxHealth = enemyData.hp;
+        get { return waypoints; }
+        set { waypoints = value; }
+    }
+
+    public void SetWaypoints(Transform[] newWaypoints)
+    {
+        waypoints = newWaypoints;
+        currentWaypointIndex = 0; // Đặt lại chỉ số waypoint khi cập nhật
+    }
+
+    protected virtual void Start()
+    {
+        maxHealth = enemyData.health;
         health = maxHealth;
         moveSpeed = enemyData.speed;
+        originalMoveSpeed = moveSpeed; // Lưu tốc độ gốc
 
         animator = GetComponent<Animator>();
+
         if (healthSlider != null)
         {
             healthSlider.maxValue = maxHealth;
@@ -36,16 +53,27 @@ public class Enemy : MonoBehaviour
             healthSlider.gameObject.SetActive(false);
         }
 
-        StartCoroutine(ActivateInvisibility()); // Kích hoạt tàng hình khi mới xuất hiện
+        waypoints = WaypointsManager.Instance.GetWaypoints();
+        if (waypoints.Length == 0)
+        {
+            Debug.LogWarning("No waypoints set.");
+        }
     }
 
-    void Update()
+    protected virtual void Update()
     {
-        if (isDead)
-        {
-            return;
-        }
+        if (isDead) return;
 
+        HandleHealthSlider();
+
+        if (!isDead)
+        {
+            MoveToWaypoint();
+        }
+    }
+
+    private void HandleHealthSlider()
+    {
         if (healthSlider != null && healthSlider.gameObject.activeSelf)
         {
             Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
@@ -63,32 +91,55 @@ public class Enemy : MonoBehaviour
                 }
             }
         }
-
-        if (waypoints != null && waypoints.Length > 0 && !isDead)
-        {
-            MoveToWaypoint();
-        }
     }
 
-    void MoveToWaypoint()
+    protected virtual void MoveToWaypoint()
     {
-        if (isDead) return;
-
-        if (currentWaypointIndex < waypoints.Length)
+        if (waypoints.Length > 0)
         {
             Transform targetWaypoint = waypoints[currentWaypointIndex];
-            transform.position = Vector2.MoveTowards(transform.position, targetWaypoint.position, moveSpeed * Time.deltaTime);
+            Vector3 direction = (targetWaypoint.position - transform.position).normalized;
+            float distanceThisFrame = moveSpeed * slowEffectMultiplier * Time.deltaTime; // Nhân với tỉ lệ làm chậm
 
-            if (Vector2.Distance(transform.position, targetWaypoint.position) < 0.1f)
+            transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, distanceThisFrame);
+
+            // Xác định hướng flip
+            if (direction.x < 0 && !flipX)
             {
-                currentWaypointIndex++;
+                Flip();
+            }
+            else if (direction.x > 0 && flipX)
+            {
+                Flip();
+            }
+
+            if (Vector3.Distance(transform.position, targetWaypoint.position) < 0.1f)
+            {
+                // Khi đến waypoint cuối cùng, trừ máu cho người chơi và hủy kẻ thù
+                if (currentWaypointIndex == waypoints.Length - 1)
+                {
+                    HandleReachedFinalWaypoint();
+                }
+
+                currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
                 animator.SetBool("Run", true);
             }
         }
     }
 
-    public void Hit(float damage)
+    private void Flip()
     {
+        // Đảo ngược trục X
+        flipX = !flipX;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
+    }
+
+    public virtual void Hit(float damage)
+    {
+        if (isDead) return;
+
         health -= damage;
         if (health > 0)
         {
@@ -100,7 +151,7 @@ public class Enemy : MonoBehaviour
             isDead = true;
             if (healthSlider != null)
             {
-                Destroy(healthSlider.gameObject); // Hủy thanh máu ngay lập tức
+                Destroy(healthSlider.gameObject);
             }
             StartCoroutine(DestroyAfterAnimation(animator.GetCurrentAnimatorStateInfo(0).length));
         }
@@ -111,42 +162,44 @@ public class Enemy : MonoBehaviour
             healthSlider.gameObject.SetActive(true);
             hitTimer = sliderDisplayDuration;
         }
-
-        animator.SetBool("Run", true);
     }
 
-    IEnumerator DestroyAfterAnimation(float delay)
+    protected virtual IEnumerator DestroyAfterAnimation(float delay)
     {
         yield return new WaitForSeconds(delay);
         Destroy(gameObject);
     }
 
-    void UpdateHealthSlider()
+    protected virtual void UpdateHealthSlider()
     {
         if (healthSlider != null)
         {
             healthSlider.value = health;
         }
     }
-    public void Attack()
-    {
-        animator.SetTrigger("Attack");
-    }
-    IEnumerator ActivateInvisibility()
-    {
-        isInvisible = true;
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null)
-        {
-            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.5f); // Làm kẻ thù tàng hình bằng cách giảm độ trong suốt
-        }
 
-        yield return new WaitForSeconds(invisibilityDuration); // Thay đổi thời gian tàng hình dựa trên biến
-
-        isInvisible = false;
-        if (spriteRenderer != null)
-        {
-            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f); // Khôi phục độ trong suốt
-        }
+    public void ApplySlow(float slowEffect, float duration)
+    {
+        slowEffectMultiplier = 1 - slowEffect; // Cập nhật tỉ lệ làm chậm
+        StartCoroutine(RemoveSlowEffectAfterDuration(duration)); // Xóa hiệu ứng sau một thời gian
     }
+
+    private IEnumerator RemoveSlowEffectAfterDuration(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        slowEffectMultiplier = 1; // Khôi phục tốc độ gốc
+    }
+
+    private void HandleReachedFinalWaypoint()
+    {
+        // Tìm người chơi và giảm 1 mạng của họ
+        PlayerUIManager player = FindObjectOfType<PlayerUIManager>();
+        if (player != null)
+        {
+            player.TakeDamage(1); // Chỉ trừ 1 mạng
+        }
+        // Hủy đối tượng kẻ thù
+        Destroy(gameObject);
+    }
+
 }
