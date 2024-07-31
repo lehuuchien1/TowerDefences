@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2707674848188444447}
   - component: {fileID: 9018697054863330419}
   - component: {fileID: 749947325462114203}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 3756524075602712815}
   - component: {fileID: 7027590630281464484}
   - component: {fileID: 8215846830050325606}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 3771250749565480046}
   - component: {fileID: 2148637115483443558}
   - component: {fileID: 1597587312544169541}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1110209585133902899}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5917518837671198056}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 7819873948136297417}
   - component: {fileID: 6275283139609973106}
   - component: {fileID: 4871573276577475892}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 1339518386902197239}
   - component: {fileID: 3936010401918792459}
   - component: {fileID: 5571007993884669794}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SlimeMonster
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 8073740621516862825}
   - component: {fileID: 4368677110680226558}
   - component: {fileID: 3881303087514685303}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

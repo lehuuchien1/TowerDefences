@@ -45,12 +45,11 @@ public class Cultist : Enemy
 
     public override void Hit(float damage)
     {
-        if (isDead) return; // Prevent actions if already dead
+        if (isDead) return;
 
         health -= damage;
         if (health > 0)
         {
-            // Ensure Hit animation plays each time
             if (animator != null)
             {
                 animator.SetTrigger("Hit");
@@ -58,7 +57,6 @@ public class Cultist : Enemy
         }
         else
         {
-            // Handle death
             if (animator != null)
             {
                 animator.SetTrigger("Die");

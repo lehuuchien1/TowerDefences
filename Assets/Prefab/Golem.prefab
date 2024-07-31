@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3239417708761478553}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 56298567387615903}
   - component: {fileID: 5555312762120663351}
   - component: {fileID: 6553960939124305172}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 8046437006857893122}
   - component: {fileID: 2083149889287331036}
   - component: {fileID: 3941615748605540114}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 921155441447297912}
   - component: {fileID: 1633401015837008794}
   - component: {fileID: 1474179673822432975}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 5133428814615641179}
   - component: {fileID: 5734802339548746532}
   - component: {fileID: 6495809923580524046}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8872491388288940932}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,8 @@ GameObject:
   - component: {fileID: 8407774236687339861}
   - component: {fileID: 1741145982239689754}
   - component: {fileID: 4217541031281491332}
-  m_Layer: 0
+  - component: {fileID: 5137662432654329116}
+  m_Layer: 6
   m_Name: Golem
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -453,6 +454,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 0
   moveSpeed: 0
+  damageToPlayer: 10
 --- !u!212 &8407774236687339861
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -553,6 +555,51 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &5137662432654329116
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8980933544835971181}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12.66, y: 7.78}
+    newSize: {x: 12.66, y: 7.78}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 12.66, y: 7.78}
+  m_EdgeRadius: 0
 --- !u!1 &9124302484292838126
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +611,7 @@ GameObject:
   - component: {fileID: 4014037806278443889}
   - component: {fileID: 7543475894080502514}
   - component: {fileID: 6635435483073048850}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

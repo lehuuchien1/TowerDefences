@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 2403436807585986021}
   - component: {fileID: 5616917894492231982}
   - component: {fileID: 6710322624326502730}
-  m_Layer: 0
+  - component: {fileID: 3583461204192067534}
+  - component: {fileID: 4257061898804691770}
+  m_Layer: 6
   m_Name: Cultist
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -127,9 +129,81 @@ MonoBehaviour:
   maxHealth: 0
   moveSpeed: 0
   damageToPlayer: 10
-  skillInterval: 5
+  skillInterval: 20
   summonPrefab: {fileID: 7569017690219613850, guid: 4e19356e8705ce14d971a70b0cd42eb2, type: 3}
   summonCount: 1
+--- !u!50 &3583461204192067534
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393449173066649025}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &4257061898804691770
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393449173066649025}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.45000002, y: 0.5502973}
+    newSize: {x: 0.45000002, y: 0.5502973}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.45000002, y: 0.5502973}
+  m_EdgeRadius: 0
 --- !u!1 &4214039295212711221
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +216,7 @@ GameObject:
   - component: {fileID: 8954541222796884020}
   - component: {fileID: 646549668374578008}
   - component: {fileID: 3052486431618360987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2420230398990032768}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +353,7 @@ GameObject:
   - component: {fileID: 653277292118326459}
   - component: {fileID: 6462916291492651303}
   - component: {fileID: 711138708405645831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +452,7 @@ GameObject:
   - component: {fileID: 3875965403351243632}
   - component: {fileID: 8857182575604755373}
   - component: {fileID: 7859597934373605284}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +527,7 @@ GameObject:
   - component: {fileID: 8204230699179234046}
   - component: {fileID: 2790782567927317375}
   - component: {fileID: 4403131102035401751}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -528,7 +602,7 @@ GameObject:
   - component: {fileID: 2208708025792708006}
   - component: {fileID: 4311893557887826491}
   - component: {fileID: 6556118947833873670}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3187066195164593125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1590036839313375908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4746123252163161719}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 7539651583806222168}
   - component: {fileID: 8992745844751942918}
   - component: {fileID: 5070288698540244681}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 3623708695311991060}
   - component: {fileID: 5889297195522291792}
   - component: {fileID: 5622179903742549600}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 6178892853889745158}
   - component: {fileID: 1774580430730341303}
   - component: {fileID: 5489021876669235362}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 7528567157164585274}
   - component: {fileID: 6264229990491814833}
   - component: {fileID: 1182050616312787346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,8 @@ GameObject:
   - component: {fileID: 1391799301488002852}
   - component: {fileID: 7225624906963601992}
   - component: {fileID: 63897390681891037}
-  m_Layer: 0
+  - component: {fileID: -8002862773329539233}
+  m_Layer: 6
   m_Name: Wolf
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -555,6 +556,51 @@ MonoBehaviour:
   moveSpeed: 0
   damageToPlayer: 10
   fadeDuration: 5
+--- !u!61 &-8002862773329539233
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8723274588402651135}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.61, y: 0.25}
+    newSize: {x: 0.61, y: 0.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.61, y: 0.25}
+  m_EdgeRadius: 0
 --- !u!1 &9044627687994082692
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +612,7 @@ GameObject:
   - component: {fileID: 2280535020117701251}
   - component: {fileID: 4750499651665229599}
   - component: {fileID: 4369126941638790387}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

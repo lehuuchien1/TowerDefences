@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6995278444955955485}
   - component: {fileID: 5574469238290005677}
   - component: {fileID: 544864880020399437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6513813777674758354}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 35080488192609098}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,9 +158,9 @@ GameObject:
   - component: {fileID: 1303467318029161747}
   - component: {fileID: 1502935430414248108}
   - component: {fileID: 488154972867036826}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yamabushi
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 5774546324812608048}
   - component: {fileID: 1986879321724124881}
   - component: {fileID: 2088590792036676703}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 1396241207058503825}
   - component: {fileID: 5596686536837190623}
   - component: {fileID: 2565657506666526618}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 6307439920023829227}
   - component: {fileID: 3032703550201224833}
   - component: {fileID: 715504921639726107}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 3244421276748495749}
   - component: {fileID: 6002224328138734869}
   - component: {fileID: 3642742159169685366}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

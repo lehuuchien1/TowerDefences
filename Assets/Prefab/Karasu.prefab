@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4563868505422590752}
   - component: {fileID: 5812618452797550477}
   - component: {fileID: 2506406982438038484}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 2961966724346840426}
   - component: {fileID: 678731357475069101}
   - component: {fileID: 2700506615731516005}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5761613745920302773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2448145884387598248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,9 +257,9 @@ GameObject:
   - component: {fileID: 5406374730308302559}
   - component: {fileID: 9009413602649844415}
   - component: {fileID: 9050942424296076044}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Karasu
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 753973754836409177}
   - component: {fileID: 8539100108647011636}
   - component: {fileID: 4221980672467422741}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 7863597508765037270}
   - component: {fileID: 3530077701808203186}
   - component: {fileID: 1182437322080082979}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 3612477493270285624}
   - component: {fileID: 2923833930261115495}
   - component: {fileID: 5312916240570482921}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
