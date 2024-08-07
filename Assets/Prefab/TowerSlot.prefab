@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 115218421208635622}
   - component: {fileID: 3184021678128845169}
   - component: {fileID: 8171048923188161686}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TowerSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,6 +53,7 @@ MonoBehaviour:
   - {fileID: 5075457384097217889, guid: c30f77c077cdd6042bf429864bc04aec, type: 3}
   - {fileID: 3872161358780652695, guid: 23529e043b9061a48906219362ca01b8, type: 3}
   towerSelectionUI: {fileID: 6971635075026786660}
+  insufficientFundsTextPrefab: {fileID: 6403702702581082997, guid: 62f4bd0bec6e8c84ba11a7e6361b2bc3, type: 3}
 --- !u!61 &3184021678128845169
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,7 +164,7 @@ GameObject:
   - component: {fileID: 7450840243613076837}
   - component: {fileID: 8606293769733565676}
   - component: {fileID: 3677734569169262139}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Production
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +300,7 @@ GameObject:
   - component: {fileID: 2690049839041542821}
   - component: {fileID: 8302251709241213778}
   - component: {fileID: 4554584555278899220}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Frost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +435,7 @@ GameObject:
   - component: {fileID: 2630544677347803764}
   - component: {fileID: 993544193375179327}
   - component: {fileID: 2485286704789027534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +536,7 @@ GameObject:
   - component: {fileID: 253789672223557386}
   - component: {fileID: 9087256180241804058}
   - component: {fileID: 5818870395648503502}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +670,7 @@ GameObject:
   - component: {fileID: 8615839846369518338}
   - component: {fileID: 5390918128842993426}
   - component: {fileID: 3019969127183313191}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -803,7 +804,7 @@ GameObject:
   - component: {fileID: 2006428241907197600}
   - component: {fileID: 1305028287840627318}
   - component: {fileID: 7425574751437741827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -935,7 +936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8835863822968570130}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TowerSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -970,7 +971,7 @@ GameObject:
   - component: {fileID: 7965559920898006774}
   - component: {fileID: 1806122101934361532}
   - component: {fileID: 3903713152539914032}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1104,7 +1105,7 @@ GameObject:
   - component: {fileID: 1768610203807670601}
   - component: {fileID: 4755270224381695857}
   - component: {fileID: 6189792759485407332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1184,7 +1185,7 @@ GameObject:
   - component: {fileID: 8728983892002698827}
   - component: {fileID: 8986545035260216297}
   - component: {fileID: 3305247540377480702}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1320,7 +1321,7 @@ GameObject:
   - component: {fileID: 5342131273232735810}
   - component: {fileID: 5359272233493991667}
   - component: {fileID: 8536300165496946567}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Barracks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1456,7 +1457,7 @@ GameObject:
   - component: {fileID: 2423251636182989030}
   - component: {fileID: 3281906276504599217}
   - component: {fileID: 7841358199900260808}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1592,7 +1593,7 @@ GameObject:
   - component: {fileID: 8675922031493594168}
   - component: {fileID: 3592595410122833757}
   - component: {fileID: 8844760569322786163}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Poison
   m_TagString: Untagged
   m_Icon: {fileID: 0}

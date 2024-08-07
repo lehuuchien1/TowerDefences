@@ -4,9 +4,10 @@ public abstract class Tower : MonoBehaviour
 {
     public TowerData towerData; // Dữ liệu tháp
     public int level; // Cấp độ của tháp
+    public int cost => towerData.levels[level].cost; // Giá của tháp ở cấp độ hiện tại
     protected float attackCooldown; // Thời gian hồi phục sau mỗi lần bắn
     protected SpriteRenderer spriteRenderer;
-    private bool isPlaced = false; // Trạng thái của tháp
+    protected bool isPlaced = false; // Trạng thái của tháp (cần thay đổi từ private sang protected)
 
     protected virtual void Start()
     {

@@ -115,9 +115,10 @@ public class Enemy : MonoBehaviour
 
             if (Vector3.Distance(transform.position, targetWaypoint.position) < 0.1f)
             {
-                // Khi đến waypoint cuối cùng, trừ máu cho người chơi và hủy kẻ thù
+                Debug.Log("Checking final waypoint.");
                 if (currentWaypointIndex == waypoints.Length - 1)
                 {
+                    Debug.Log("Reached final waypoint.");
                     HandleReachedFinalWaypoint();
                 }
 
@@ -192,14 +193,10 @@ public class Enemy : MonoBehaviour
 
     private void HandleReachedFinalWaypoint()
     {
-        // Tìm người chơi và giảm 1 mạng của họ
-        PlayerUIManager player = FindObjectOfType<PlayerUIManager>();
-        if (player != null)
+        if (GameManager.Instance != null)
         {
-            player.TakeDamage(1); // Chỉ trừ 1 mạng
+            GameManager.Instance.TakeDamage((int)damageToPlayer);
         }
-        // Hủy đối tượng kẻ thù
         Destroy(gameObject);
     }
-
 }

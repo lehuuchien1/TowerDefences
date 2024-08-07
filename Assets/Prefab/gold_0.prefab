@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3872161358780652695
+--- !u!1 &747925367407641721
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2313838361215430770}
-  - component: {fileID: 2555622863354424425}
-  - component: {fileID: -2856922818909985166}
+  - component: {fileID: 4426558976587110083}
+  - component: {fileID: 3709236115317646658}
+  - component: {fileID: 9147058987515518012}
   m_Layer: 0
-  m_Name: ProductionTower
+  m_Name: gold_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2313838361215430770
+--- !u!4 &4426558976587110083
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3872161358780652695}
+  m_GameObject: {fileID: 747925367407641721}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.01, y: 0, z: 0}
-  m_LocalScale: {x: 0.775, y: 1.1083, z: 1}
+  m_LocalPosition: {x: -4.09, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2555622863354424425
+--- !u!212 &3709236115317646658
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3872161358780652695}
+  m_GameObject: {fileID: 747925367407641721}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,34 +74,35 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: cead0ea8bfa0f0d4f898d77e23c605a7, type: 3}
+  m_Sprite: {fileID: -240173706, guid: 7af7fb8c0f5dd964e83b0fb6de66255a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.92, y: 1.28}
+  m_Size: {x: 0.57, y: 0.57}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2856922818909985166
-MonoBehaviour:
+--- !u!95 &9147058987515518012
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3872161358780652695}
+  m_GameObject: {fileID: 747925367407641721}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 512393b943a3958428590e9a32bb1c62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerData: {fileID: 11400000, guid: d0c8542697d17e240ae9221bd2ce2329, type: 2}
-  level: 0
-  goldPerInterval: 10
-  interval: 3
-  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  highlightDuration: 0.5
-  goldAnimationPrefab: {fileID: 747925367407641721, guid: 111bf7aaad9ee5a4f8489ff258150357, type: 3}
-  animationDuration: 0.5
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cdb77ef4847bc034b9ab9c0fa989b2a9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
