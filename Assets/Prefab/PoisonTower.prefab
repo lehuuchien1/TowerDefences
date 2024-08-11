@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41e41ccbb08c5546bab719de4ea50e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerData: {fileID: 11400000, guid: 190b7adccd072e74a8c6cbb02d622a34, type: 2}
+  towerData: {fileID: 11400000, guid: 0f34b6bcbeb5aca4f834252dd34cb195, type: 2}
   level: 0
-  poisonProjectilePrefab: {fileID: 7803034253655274834, guid: ba0fd578da2f83f48b27e55b6dd2c072, type: 3}
+  poisonProjectilePrefab: {fileID: 6980962619178917225, guid: ecbb305d4625e934ea580bc0cafbce7d, type: 3}
   firePoint: {fileID: 4802729496552446918}
-  poisonEffectPrefab: {fileID: 4601258774213008086, guid: ed89b82a2cb47e34e8d79e2c8ea2ef52, type: 3}
+  poisonEffectPrefab: {fileID: 73110070290803677, guid: dde9f701de68c3f4fb4dfdcc2af8079e, type: 3}

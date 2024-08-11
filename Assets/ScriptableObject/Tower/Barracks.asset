@@ -18,10 +18,10 @@ MonoBehaviour:
     projectileData:
       damage: 0
       speed: 0
-    spawnInterval: 3
+    spawnInterval: 5
     maxSoldiers: 5
     slowEffect: 0
     poisonDamage: 0
     poisonDuration: 0
-    cost: 50
+    cost: 100
     sprite: {fileID: 0}

@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fa6ae5e9d8dd34180efaac7fd35b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerData: {fileID: 11400000, guid: 3b2c40fa4c9ce14459398273f0557a7a, type: 2}
+  towerData: {fileID: 11400000, guid: b392bd0dfb50e604ca9d05179cbda42b, type: 2}
   level: 0
   soldierPrefab: {fileID: 4376537339711221567, guid: b36dc19da40a0d74f9f248bef7456b07, type: 3}
   spawnRadius: 1.5

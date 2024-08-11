@@ -177,9 +177,8 @@ public class Soldier : MonoBehaviour
 
     private void Die()
     {
-        animator.SetTrigger("Die");
         OnDestroyEvent?.Invoke();
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject);
     }
 
     public void SetTarget(Transform newTarget)

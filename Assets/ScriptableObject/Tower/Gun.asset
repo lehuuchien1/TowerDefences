@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - attackRadius: 5
-    fireRate: 3
+    fireRate: 5
     projectileData:
-      damage: 100
-      speed: 5
+      damage: 50
+      speed: 10
     spawnInterval: 0
     maxSoldiers: 0
     slowEffect: 0

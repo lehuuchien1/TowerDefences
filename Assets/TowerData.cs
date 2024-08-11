@@ -3,7 +3,7 @@
 [CreateAssetMenu(fileName = "TowerData", menuName = "TowerDefense/TowerData", order = 2)]
 public class TowerData : ScriptableObject
 {
-    public TowerLevelData[] levels; // Dữ liệu cấp độ của tháp
+    public TowerLevelData[] levels;
 }
 
 [System.Serializable]
@@ -17,7 +17,7 @@ public class TowerLevelData
     public float slowEffect;
     public float poisonDamage;
     public float poisonDuration;
-    public int cost; // Giá của tháp
+    public int cost; 
     public Sprite sprite;
 }
 

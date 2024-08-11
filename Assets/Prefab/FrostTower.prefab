@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742c42d206fbd464ca069c447295fda0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerData: {fileID: 11400000, guid: 7dbf9a2af44a1ff42bdbce57b9689314, type: 2}
+  towerData: {fileID: 11400000, guid: fff18a27341d39b4998d588387d42e4e, type: 2}
   level: 0
   frostProjectilePrefab: {fileID: 5014252669540265426, guid: 5ff5bff05e1db2345a9f2bc5871a5a42, type: 3}
   firePoint: {fileID: 1934468520468439107}
