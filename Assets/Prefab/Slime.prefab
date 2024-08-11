@@ -625,8 +625,6 @@ MonoBehaviour:
   sliderDisplayDuration: 0.5
   health: 0
   maxHealth: 0
-  moveSpeed: 0
-  damageToPlayer: 10
 --- !u!50 &-7466699849962378206
 Rigidbody2D:
   serializedVersion: 4
@@ -635,7 +633,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9087225623555701876}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -683,7 +681,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

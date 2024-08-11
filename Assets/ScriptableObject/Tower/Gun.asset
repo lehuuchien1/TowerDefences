@@ -16,11 +16,12 @@ MonoBehaviour:
   - attackRadius: 5
     fireRate: 3
     projectileData:
-      damage: 60
-      speed: 3
+      damage: 100
+      speed: 5
     spawnInterval: 0
     maxSoldiers: 0
     slowEffect: 0
     poisonDamage: 0
     poisonDuration: 0
-    cost: 100
+    cost: 50
+    sprite: {fileID: 0}

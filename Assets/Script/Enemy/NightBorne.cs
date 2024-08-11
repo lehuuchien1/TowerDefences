@@ -49,16 +49,20 @@ public class NightBorne : Enemy
     // Thêm phương thức Explode để gây sát thương lan
     private void Explode()
     {
+        // Tìm tất cả các collider trong bán kính nổ
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+
         foreach (var hitCollider in hitColliders)
         {
-            Enemy enemy = hitCollider.GetComponent<Enemy>();
-            if (enemy != null && enemy != this)
+            // Kiểm tra nếu collider thuộc loại Soldier và không phải là NightBorne
+            Soldier soldier = hitCollider.GetComponent<Soldier>();
+            if (soldier != null && soldier.gameObject != this.gameObject) // Loại trừ tổn thương tự gây ra
             {
-                enemy.Hit(explosionDamage);
+                soldier.SoldierHit(explosionDamage);
             }
         }
     }
+
 
     // Phương thức này sẽ vẽ một hình tròn để dễ dàng kiểm tra bán kính nổ trong Unity Editor
     private void OnDrawGizmosSelected()

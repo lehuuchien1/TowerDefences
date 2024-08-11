@@ -49,8 +49,8 @@ public class DangNhapTaiKhoan : MonoBehaviour
                 thongbao.text = "Đăng nhập thành công";
                 PlayerPrefs.SetString("token", get);
                 Debug.Log(get);
-                yield return new WaitForSeconds(3);
-                SceneManager.LoadScene("Chapter");
+                yield return new WaitForSeconds(0.1f);
+                SceneLoader.LoadScene("MainMenu");
                 yield break;
             }
 

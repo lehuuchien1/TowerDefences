@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9e4ce69000c34944966803af6c9c5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tenManChoi: Chapter
+  tenManChoi: MainMenu
 --- !u!1 &262849435
 GameObject:
   m_ObjectHideFlags: 0

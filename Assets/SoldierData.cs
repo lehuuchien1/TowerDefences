@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Soldier Data", menuName = "Soldier Data",order =4)]
+[CreateAssetMenu(fileName = "SoldierData", menuName = "Soldier/SoldierData", order = 1)]
 public class SoldierData : ScriptableObject
 {
     public float health;
@@ -8,4 +8,5 @@ public class SoldierData : ScriptableObject
     public float moveSpeed;
     public float attackSpeed;
     public float attackRadius;
+    public float attackTarget;
 }

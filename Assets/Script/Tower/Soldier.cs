@@ -2,13 +2,14 @@
 
 public class Soldier : MonoBehaviour
 {
-    public SoldierData soldierData;  // Tham chiếu đến ScriptableObject
+    public SoldierData soldierData;
 
-    private float health;
+    private float soldierHealth;
     private float damage;
     private float moveSpeed;
     private float attackSpeed;
     private float attackRadius;
+    private float attackTarget;
 
     private Transform target;
     private Vector2 spawnPosition;
@@ -21,11 +22,12 @@ public class Soldier : MonoBehaviour
     {
         if (soldierData != null)
         {
-            health = soldierData.health;
+            soldierHealth = soldierData.health;
             damage = soldierData.damage;
             moveSpeed = soldierData.moveSpeed;
             attackSpeed = soldierData.attackSpeed;
             attackRadius = soldierData.attackRadius;
+            attackTarget = soldierData.attackTarget;
         }
         spawnPosition = transform.position;
         animator = GetComponent<Animator>();
@@ -38,118 +40,150 @@ public class Soldier : MonoBehaviour
     {
         if (target != null)
         {
-            FlipTowardsTarget();
+            // Kiểm tra nếu kẻ thù nằm trong phạm vi attackTarget
+            if (Vector2.Distance(transform.position, target.position) <= attackTarget)
+            {
+                FlipTowardsTarget();
 
-            Vector2 direction = target.position - transform.position;
-            bool isMoving = direction.magnitude > 0.1f;
-            if (isMoving)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-                animator.SetBool("Run", true);
-            }
-            else
-            {
-                animator.SetBool("Run", false);
-            }
-
-            if (Vector2.Distance(transform.position, target.position) < 0.1f)
-            {
-                if (attackCooldownTimer <= 0f)
+                Vector2 direction = target.position - transform.position;
+                bool isMoving = direction.magnitude > 0.1f;
+                if (isMoving)
                 {
-                    Attack();
-                    attackCooldownTimer = attackCooldown;
+                    transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+                    animator.SetBool("Run", true);
                 }
                 else
                 {
-                    attackCooldownTimer -= Time.deltaTime;
+                    animator.SetBool("Run", false);
+                    Attack();
                 }
+            }
+            else
+            {
+                // Nếu kẻ thù không nằm trong phạm vi attackTarget, di chuyển về vị trí ban đầu
+                animator.SetBool("Run", true);
+                MoveToInitialPosition();
             }
         }
         else
         {
-            if (Vector2.Distance(transform.position, spawnPosition) > 0.1f)
+            // Nếu không có mục tiêu, di chuyển về vị trí ban đầu
+            animator.SetBool("Run", true);
+            MoveToInitialPosition();
+        }
+    }
+
+    private void MoveToInitialPosition()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, spawnPosition, moveSpeed * Time.deltaTime);
+    }
+
+    private void UpdateTarget()
+    {
+        if (target == null)
+        {
+            Enemy[] enemies = FindObjectsOfType<Enemy>();
+            float minDistance = attackTarget; // Tầm phát hiện enemy
+            Transform nearestEnemy = null;
+
+            foreach (Enemy enemy in enemies)
             {
-                transform.position = Vector2.MoveTowards(transform.position, spawnPosition, moveSpeed * Time.deltaTime);
-                animator.SetBool("Run", true);
+                float distance = Vector2.Distance(transform.position, enemy.transform.position);
+                if (distance < minDistance)
+                {
+                    nearestEnemy = enemy.transform;
+                    minDistance = distance;
+                }
             }
-            else
+
+            if (nearestEnemy != null)
             {
-                animator.SetBool("Run", false);
+                SetTarget(nearestEnemy);
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Enemy enemy = other.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            SetTarget(enemy.transform);
+            Attack();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        Enemy enemy = other.GetComponent<Enemy>();
+        if (enemy != null && target == enemy.transform)
+        {
+            SetTarget(null);
         }
     }
 
     private void FlipTowardsTarget()
     {
-        if (target == null) return;
+        if (target != null)
+        {
+            Vector3 direction = target.position - transform.position;
+            if (direction.x < 0 && transform.localScale.x > 0)
+            {
+                Flip();
+            }
+            else if (direction.x > 0 && transform.localScale.x < 0)
+            {
+                Flip();
+            }
+        }
+    }
 
-        float direction = target.position.x - transform.position.x;
-        if (direction > 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        else
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
+    private void Flip()
+    {
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 
     private void Attack()
     {
-        if (animator != null)
+        if (target != null && attackCooldownTimer <= 0f)
         {
-            animator.SetTrigger("Attack");
+            if (Vector2.Distance(transform.position, target.position) <= attackRadius) // Kiểm tra tầm đánh
+            {
+                animator.SetTrigger("Attack");
+                Enemy enemy = target.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    enemy.Hit(damage);
+                }
+                attackCooldownTimer = attackCooldown;
+            }
         }
-
-        if (target != null)
+        else
         {
-            target.GetComponent<Enemy>().Hit(damage);
+            attackCooldownTimer -= Time.deltaTime;
+        }
+    }
+
+    public void SoldierHit(float damageAmount)
+    {
+        soldierHealth -= damageAmount;
+        if (soldierHealth <= 0)
+        {
+            Die();
         }
     }
 
     private void Die()
     {
-        Destroy(gameObject);
-    }
-
-    void UpdateTarget()
-    {
-        Enemy[] enemies = FindObjectsOfType<Enemy>();
-        Transform closestEnemy = null;
-        float minDistance = attackRadius;
-
-        foreach (Enemy enemy in enemies)
-        {
-            // Kiểm tra trạng thái tàn hình của Wolf
-            if (enemy is Wolf wolf && wolf.IsFading())
-            {
-                continue; // Bỏ qua đối tượng đang tàn hình
-            }
-
-            float distance = Vector2.Distance(transform.position, enemy.transform.position);
-            if (distance < minDistance)
-            {
-                closestEnemy = enemy.transform;
-                minDistance = distance;
-            }
-        }
-
-        target = closestEnemy;
+        animator.SetTrigger("Die");
+        OnDestroyEvent?.Invoke();
+        Destroy(gameObject, 0.5f);
     }
 
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;
-    }
-
-    private void OnDestroy()
-    {
-        OnDestroyEvent?.Invoke();
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
 }

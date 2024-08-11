@@ -3,8 +3,15 @@ using UnityEngine;
 
 public class PoisonEffect : MonoBehaviour
 {
-    public float poisonDamage = 5f; // Sát thương độc
-    public float duration = 5f; // Thời gian tồn tại của vùng độc
+    private float poisonDamage;
+    private float duration;
+
+    public void Initialize(float _poisonDamage, float _duration)
+    {
+        poisonDamage = _poisonDamage;
+        duration = _duration;
+        Destroy(gameObject, duration);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,16 +30,11 @@ public class PoisonEffect : MonoBehaviour
         float elapsedTime = 0f;
         while (elapsedTime < duration)
         {
-            enemy.Hit(poisonDamage * Time.deltaTime); // Gây sát thương độc liên tục
+            enemy.Hit(poisonDamage * Time.deltaTime);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        Destroy(gameObject); // Hủy hiệu ứng sau khi kết thúc
-    }
-
-    private void Start()
-    {
-        Destroy(gameObject, duration); // Hủy hiệu ứng sau thời gian tồn tại
+        Destroy(gameObject);
     }
 }

@@ -16,4 +16,5 @@ MonoBehaviour:
   speed: 3
   damage: 50
   attackSpeed: 3
+  attackRadius: 0.1
   skills: []

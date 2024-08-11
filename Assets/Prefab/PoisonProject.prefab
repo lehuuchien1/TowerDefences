@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5754940321659671693}
   - component: {fileID: 7773367211921317120}
-  - component: {fileID: 873922950931289554}
   - component: {fileID: -8720638666694410738}
   - component: {fileID: -396630761302719873}
+  - component: {fileID: 3872765520296709701}
   m_Layer: 0
   m_Name: PoisonProject
   m_TagString: Untagged
@@ -87,20 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &873922950931289554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7803034253655274834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47b053a55a4f39e43b3bd6edba87e2d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 100
-  explosionEffect: {fileID: 4601258774213008086, guid: ed89b82a2cb47e34e8d79e2c8ea2ef52, type: 3}
 --- !u!70 &-8720638666694410738
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -151,7 +137,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -163,3 +149,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3872765520296709701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7803034253655274834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a61be3ee8fbea4a83af9d8c4f74051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  poisonEffectPrefab: {fileID: 4601258774213008086, guid: ed89b82a2cb47e34e8d79e2c8ea2ef52, type: 3}

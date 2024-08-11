@@ -5,25 +5,29 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     public EnemyData enemyData;
+
     public Slider healthSlider;
     public float sliderDisplayDuration = 0.3f;
 
     public float health;
     public float maxHealth;
-    public float moveSpeed;
+    protected float moveSpeed;
+    protected float attackRadius;
+    protected float originalMoveSpeed;
+    protected float slowEffectMultiplier = 1f;
+
     protected Animator animator;
     protected bool isDead = false;
     protected Transform[] waypoints;
     protected int currentWaypointIndex = 0;
     protected float hitTimer = 0f;
-    private float originalMoveSpeed; // Lưu tốc độ gốc
-    private float slowEffectMultiplier = 1f; // Tỉ lệ làm chậm hiện tại
 
-    // Thêm biến flipX
-    private bool flipX = false;
+    protected bool flipX = false;
+    protected Transform targetSoldier;
+    protected bool isAttacking = false;
 
-    // Sát thương khi kẻ thù đến điểm waypoint cuối cùng
-    public float damageToPlayer = 10f;
+    private float attackCooldown;
+    private float attackCooldownTimer;
 
     public Transform[] Waypoints
     {
@@ -34,15 +38,22 @@ public class Enemy : MonoBehaviour
     public void SetWaypoints(Transform[] newWaypoints)
     {
         waypoints = newWaypoints;
-        currentWaypointIndex = 0; // Đặt lại chỉ số waypoint khi cập nhật
+        currentWaypointIndex = 0;
     }
 
     protected virtual void Start()
     {
-        maxHealth = enemyData.health;
-        health = maxHealth;
-        moveSpeed = enemyData.speed;
-        originalMoveSpeed = moveSpeed; // Lưu tốc độ gốc
+        if (enemyData != null)
+        {
+            maxHealth = enemyData.health; // Khởi tạo maxHealth từ EnemyData
+            health = maxHealth;
+            moveSpeed = enemyData.speed;
+            originalMoveSpeed = moveSpeed;
+            attackRadius = enemyData.attackRadius;
+
+            attackCooldown = 1f / enemyData.attackSpeed; // Tính toán thời gian giữa các đợt tấn công
+            attackCooldownTimer = 0f;
+        }
 
         animator = GetComponent<Animator>();
 
@@ -54,10 +65,6 @@ public class Enemy : MonoBehaviour
         }
 
         waypoints = WaypointsManager.Instance.GetWaypoints();
-        if (waypoints.Length == 0)
-        {
-            Debug.LogWarning("No waypoints set.");
-        }
     }
 
     protected virtual void Update()
@@ -66,13 +73,79 @@ public class Enemy : MonoBehaviour
 
         HandleHealthSlider();
 
-        if (!isDead)
+        if (targetSoldier != null)
         {
-            MoveToWaypoint();
+            if (Vector2.Distance(transform.position, targetSoldier.position) < attackRadius)
+            {
+                AttackTarget();
+            }
+            else
+            {
+                ClearTarget();
+            }
+        }
+        else
+        {
+            FindNearestSoldier();
+            if (targetSoldier != null)
+            {
+                isAttacking = true;
+                AttackTarget();
+            }
+            else
+            {
+                isAttacking = false;
+                MoveToWaypoint();
+            }
         }
     }
 
-    private void HandleHealthSlider()
+    protected virtual void FindNearestSoldier()
+    {
+        Soldier[] soldiers = FindObjectsOfType<Soldier>();
+        float minDistance = attackRadius;
+        Transform nearestSoldier = null;
+
+        foreach (Soldier soldier in soldiers)
+        {
+            if (soldier.CompareTag("LinhCan"))
+            {
+                float distance = Vector2.Distance(transform.position, soldier.transform.position);
+                if (distance < minDistance)
+                {
+                    nearestSoldier = soldier.transform;
+                    minDistance = distance;
+                }
+            }
+        }
+
+        targetSoldier = nearestSoldier;
+    }
+
+    protected virtual void AttackTarget()
+    {
+        if (targetSoldier != null && attackCooldownTimer <= 0f)
+        {
+            if (animator != null)
+            {
+                animator.SetTrigger("Attack");
+            }
+
+            Soldier soldier = targetSoldier.GetComponent<Soldier>();
+            if (soldier != null)
+            {
+                soldier.SoldierHit(enemyData.damage); // Gửi sát thương từ EnemyData
+            }
+
+            attackCooldownTimer = attackCooldown; // Đặt lại thời gian giữa các đợt tấn công
+        }
+        else
+        {
+            attackCooldownTimer -= Time.deltaTime;
+        }
+    }
+
+    protected virtual void HandleHealthSlider()
     {
         if (healthSlider != null && healthSlider.gameObject.activeSelf)
         {
@@ -99,11 +172,10 @@ public class Enemy : MonoBehaviour
         {
             Transform targetWaypoint = waypoints[currentWaypointIndex];
             Vector3 direction = (targetWaypoint.position - transform.position).normalized;
-            float distanceThisFrame = moveSpeed * slowEffectMultiplier * Time.deltaTime; // Nhân với tỉ lệ làm chậm
+            float distanceThisFrame = moveSpeed * slowEffectMultiplier * Time.deltaTime;
 
             transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, distanceThisFrame);
 
-            // Xác định hướng flip
             if (direction.x < 0 && !flipX)
             {
                 Flip();
@@ -115,10 +187,8 @@ public class Enemy : MonoBehaviour
 
             if (Vector3.Distance(transform.position, targetWaypoint.position) < 0.1f)
             {
-                Debug.Log("Checking final waypoint.");
                 if (currentWaypointIndex == waypoints.Length - 1)
                 {
-                    Debug.Log("Reached final waypoint.");
                     HandleReachedFinalWaypoint();
                 }
 
@@ -128,9 +198,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Flip()
+    protected virtual void Flip()
     {
-        // Đảo ngược trục X
         flipX = !flipX;
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;
@@ -148,13 +217,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            animator.SetTrigger("Die");
-            isDead = true;
-            if (healthSlider != null)
-            {
-                Destroy(healthSlider.gameObject);
-            }
-            StartCoroutine(DestroyAfterAnimation(animator.GetCurrentAnimatorStateInfo(0).length));
+            Die();
         }
         UpdateHealthSlider();
 
@@ -163,6 +226,17 @@ public class Enemy : MonoBehaviour
             healthSlider.gameObject.SetActive(true);
             hitTimer = sliderDisplayDuration;
         }
+    }
+
+    protected virtual void Die()
+    {
+        animator.SetTrigger("Die");
+        isDead = true;
+        if (healthSlider != null)
+        {
+            Destroy(healthSlider.gameObject);
+        }
+        StartCoroutine(DestroyAfterAnimation(animator.GetCurrentAnimatorStateInfo(0).length));
     }
 
     protected virtual IEnumerator DestroyAfterAnimation(float delay)
@@ -179,24 +253,34 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void ApplySlow(float slowEffect, float duration)
+    public virtual void ApplySlow(float slowEffect, float duration)
     {
-        slowEffectMultiplier = 1 - slowEffect; // Cập nhật tỉ lệ làm chậm
-        StartCoroutine(RemoveSlowEffectAfterDuration(duration)); // Xóa hiệu ứng sau một thời gian
+        slowEffectMultiplier = 1 - slowEffect;
+        StartCoroutine(RemoveSlowEffectAfterDuration(duration));
     }
 
-    private IEnumerator RemoveSlowEffectAfterDuration(float duration)
+    protected virtual IEnumerator RemoveSlowEffectAfterDuration(float duration)
     {
         yield return new WaitForSeconds(duration);
-        slowEffectMultiplier = 1; // Khôi phục tốc độ gốc
+        slowEffectMultiplier = 1;
     }
 
-    private void HandleReachedFinalWaypoint()
+    protected virtual void HandleReachedFinalWaypoint()
     {
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.TakeDamage((int)damageToPlayer);
+            GameManager.Instance.TakeDamage((int)enemyData.damage);
         }
         Destroy(gameObject);
+    }
+
+    public virtual void SetTargetSoldier(Transform newTarget)
+    {
+        targetSoldier = newTarget;
+    }
+
+    public virtual void ClearTarget()
+    {
+        targetSoldier = null;
     }
 }

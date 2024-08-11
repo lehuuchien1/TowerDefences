@@ -434,8 +434,8 @@ GameObject:
   - component: {fileID: 3372572438605917415}
   - component: {fileID: 1998740865662348553}
   - component: {fileID: 9193872008317893920}
-  - component: {fileID: 2508733658630212238}
   - component: {fileID: -3742914470012307500}
+  - component: {fileID: 3342642011405211844}
   - component: {fileID: -5154936428127208224}
   m_Layer: 6
   m_Name: MiniCultist
@@ -453,7 +453,7 @@ Transform:
   m_GameObject: {fileID: 7569017690219613850}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.15, y: 0, z: 0}
+  m_LocalPosition: {x: -11.698841, y: -3.0509083, z: 0}
   m_LocalScale: {x: 3.7917, y: 3.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -533,25 +533,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2508733658630212238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7569017690219613850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae2ede72523419a4681fd3b8d9c46a99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 71e406430aecd7b40a71b195dd788018, type: 2}
-  healthSlider: {fileID: 4297893869920432355}
-  sliderDisplayDuration: 0.5
-  health: 0
-  maxHealth: 0
-  moveSpeed: 0
-  damageToPlayer: 10
 --- !u!50 &-3742914470012307500
 Rigidbody2D:
   serializedVersion: 4
@@ -560,7 +541,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7569017690219613850}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -579,6 +560,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3342642011405211844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7569017690219613850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9309a1c7c368b5843bd9a787240d9c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 71e406430aecd7b40a71b195dd788018, type: 2}
+  healthSlider: {fileID: 4297893869920432355}
+  sliderDisplayDuration: 0.3
+  health: 0
+  maxHealth: 0
 --- !u!61 &-5154936428127208224
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -608,7 +606,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

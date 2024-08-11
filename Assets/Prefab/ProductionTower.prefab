@@ -100,7 +100,7 @@ MonoBehaviour:
   towerData: {fileID: 11400000, guid: d0c8542697d17e240ae9221bd2ce2329, type: 2}
   level: 0
   goldPerInterval: 10
-  interval: 3
+  interval: 5
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   highlightDuration: 0.5
   goldAnimationPrefab: {fileID: 747925367407641721, guid: 111bf7aaad9ee5a4f8489ff258150357, type: 3}

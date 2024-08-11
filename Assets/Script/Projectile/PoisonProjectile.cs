@@ -2,14 +2,16 @@
 
 public class PoisonProjectile : MonoBehaviour
 {
-    public float damage; // Sát thương của projectile
-    private float speed; // Tốc độ di chuyển của projectile
+    public float damage;
+    private float speed;
     private Transform target;
-    private PoisonTower poisonTower; // Thay GunTower bằng PoisonTower cho phù hợp
+    private PoisonTower poisonTower;
+    public GameObject poisonEffectPrefab;
 
-    public GameObject poisonEffectPrefab; // Prefab của vùng độc
+    private float poisonDamage;
+    private float poisonDuration;
 
-    public void Initialize(Transform _target, ProjectileData _projectileData, PoisonTower _poisonTower)
+    public void Initialize(Transform _target, ProjectileData _projectileData, PoisonTower _poisonTower, float _poisonDamage, float _poisonDuration)
     {
         target = _target;
         poisonTower = _poisonTower;
@@ -18,10 +20,12 @@ public class PoisonProjectile : MonoBehaviour
         {
             damage = _projectileData.damage;
             speed = _projectileData.speed;
+            poisonDamage = _poisonDamage;
+            poisonDuration = _poisonDuration;
         }
         else
         {
-            Destroy(gameObject); // Nếu có lỗi, hủy projectile ngay lập tức
+            Destroy(gameObject);
         }
     }
 
@@ -56,8 +60,13 @@ public class PoisonProjectile : MonoBehaviour
 
                 if (poisonEffectPrefab != null)
                 {
-                    // Tạo vùng độc tại vị trí mục tiêu
+                    // Tạo vùng độc tại vị trí mục tiêu với thông tin từ projectile
                     GameObject poisonEffectGO = Instantiate(poisonEffectPrefab, target.position, Quaternion.identity);
+                    PoisonEffect poisonEffect = poisonEffectGO.GetComponent<PoisonEffect>();
+                    if (poisonEffect != null)
+                    {
+                        poisonEffect.Initialize(poisonDamage, poisonDuration);
+                    }
                 }
             }
         }
@@ -69,7 +78,7 @@ public class PoisonProjectile : MonoBehaviour
     {
         if (poisonTower != null)
         {
-            poisonTower.OnProjectileDestroyed(); // Gọi để cho phép tháp bắn lại
+            poisonTower.OnProjectileDestroyed();
         }
         Destroy(gameObject);
     }

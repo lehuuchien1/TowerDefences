@@ -35,4 +35,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: a3d254d67873fb64ba141a41fb99487f
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: 7e7565cb97b76f044a404508aa19e949
+  - enabled: 1
+    path: "Assets/Scenes/C\xE0i \u0111\u1EB7t.unity"
+    guid: 11bd384f5d0a2a04aaf94ba5902bc9a6
+  - enabled: 1
+    path: Assets/Scenes/Help.unity
+    guid: 9145135848c6f8e4fbdffaca157bebf2
   m_configObjects: {}

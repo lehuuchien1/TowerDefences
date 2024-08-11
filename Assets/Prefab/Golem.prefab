@@ -453,8 +453,6 @@ MonoBehaviour:
   sliderDisplayDuration: 0.5
   health: 0
   maxHealth: 0
-  moveSpeed: 0
-  damageToPlayer: 10
 --- !u!212 &8407774236687339861
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -515,7 +513,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8980933544835971181}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -584,10 +582,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.8552616, y: -1.1623604}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -598,7 +596,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.66, y: 7.78}
+  m_Size: {x: 5.3677573, y: 5.45528}
   m_EdgeRadius: 0
 --- !u!1 &9124302484292838126
 GameObject:

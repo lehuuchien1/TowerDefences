@@ -18,6 +18,7 @@ public class TowerLevelData
     public float poisonDamage;
     public float poisonDuration;
     public int cost; // Giá của tháp
+    public Sprite sprite;
 }
 
 [System.Serializable]

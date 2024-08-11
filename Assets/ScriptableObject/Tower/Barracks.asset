@@ -20,3 +20,8 @@ MonoBehaviour:
       speed: 0
     spawnInterval: 3
     maxSoldiers: 5
+    slowEffect: 0
+    poisonDamage: 0
+    poisonDuration: 0
+    cost: 50
+    sprite: {fileID: 0}

@@ -2,9 +2,9 @@
 
 public class PoisonTower : Tower
 {
-    public GameObject poisonProjectilePrefab; // Prefab của PoisonProjectile
+    public GameObject poisonProjectilePrefab;
     public Transform firePoint;
-    public GameObject poisonEffectPrefab; // Prefab của vùng gây độc
+    public GameObject poisonEffectPrefab;
 
     private Transform target;
     private bool canShoot = true;
@@ -86,12 +86,8 @@ public class PoisonTower : Tower
 
         if (poisonProjectile != null)
         {
-            poisonProjectile.Initialize(target, towerData.levels[level].projectileData, this);
-        }
-
-        if (poisonEffectPrefab != null)
-        {
-            GameObject poisonEffectGO = Instantiate(poisonEffectPrefab, firePoint.position, Quaternion.identity);
+            ProjectileData projectileData = towerData.levels[level].projectileData;
+            poisonProjectile.Initialize(target, projectileData, this, towerData.levels[level].poisonDamage, towerData.levels[level].poisonDuration);
         }
 
         canShoot = false;

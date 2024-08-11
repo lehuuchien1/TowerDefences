@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - attackRadius: 5
-    fireRate: 5
+    fireRate: 0.3
     projectileData:
-      damage: 30
+      damage: 50
       speed: 5
     spawnInterval: 0
     maxSoldiers: 0
     slowEffect: 0
-    poisonDamage: 30
+    poisonDamage: 20
     poisonDuration: 5
+    cost: 100
+    sprite: {fileID: 0}
