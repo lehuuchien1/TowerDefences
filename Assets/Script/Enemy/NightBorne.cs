@@ -3,19 +3,15 @@ using UnityEngine;
 
 public class NightBorne : Enemy
 {
-    // Thêm thuộc tính cho sát thương nổ và bán kính nổ
     public float explosionDamage = 50f;
     public float explosionRadius = 5f;
-
-    // Ghi đè phương thức Hit để xử lý sát thương và kiểm tra trạng thái chết
     public override void Hit(float damage)
     {
-        if (isDead) return; // Prevent actions if already dead
+        if (isDead) return;
 
         health -= damage;
         if (health > 0)
         {
-            // Ensure Hit animation plays each time
             if (animator != null)
             {
                 animator.SetTrigger("Hit");
@@ -23,7 +19,6 @@ public class NightBorne : Enemy
         }
         else
         {
-            // Handle death
             if (animator != null)
             {
                 animator.SetTrigger("Die");
@@ -45,8 +40,6 @@ public class NightBorne : Enemy
             hitTimer = sliderDisplayDuration;
         }
     }
-
-    // Thêm phương thức Explode để gây sát thương lan
     private void Explode()
     {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
@@ -59,8 +52,6 @@ public class NightBorne : Enemy
             }
         }
     }
-
-    // Phương thức này sẽ vẽ một hình tròn để dễ dàng kiểm tra bán kính nổ trong Unity Editor
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
